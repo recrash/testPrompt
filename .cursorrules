@@ -73,19 +73,36 @@
 ## Project Structure
 
 ### Spring Boot 3
-src/main/java/com/example/project/ ├── api/ # REST controllers ├── application/ # Use‑case services ├── domain/ # Domain models & services ├── infrastructure/ # Repositories, external I/O ├── config/ # Spring configuration └── util/ # Utilities
+src/main/java/com/example/project/ 
+├── api/ # REST controllers 
+├── application/ # Use‑case services 
+├── domain/ # Domain models & services 
+├── infrastructure/ # Repositories, external I/O 
+├── config/ # Spring configuration └
+└── util/ # Utilities
 
 
 ### Vue 3 + Vite
-my-vue-app/src/ ├── assets/ # static files ├── components/ # shared UI ├── composables/ # reusable logic ├── views/ # route pages ├── router/ # vue‑router ├── store/ # pinia ├── i18n/ # localization └── main.js
+webUI/src/ 
+├── assets/ # static files 
+├── components/ # shared UI 
+├── composables/ # reusable logic 
+├── views/ # route pages 
+├── router/ # vue‑router 
+├── store/ # pinia 
+├── i18n/ # localization 
+└── main.js
 
 
 --------------------------------------------------------------------
 ## Naming Conventions
-- Directories: `kebab-case`; Vue components: `PascalCase.vue`.
-- Pinia store: `useXxxStore.js`; composable: `useSomething.js`.
-- Java packages: `lower.case`; constants: `UPPER_SNAKE_CASE`.
-- CSS (BEM): `block__element--modifier`.
+- Directories: `kebab-case`
+- Vue components: `PascalCase.vue`
+- Pinia store: `useXxxStore.js`
+- Composables: `useSomething.js`
+- Java packages: `lower.case`
+- Constants: `UPPER_SNAKE_CASE`
+- CSS (BEM): `block__element--modifier`
 
 --------------------------------------------------------------------
 ## Key CLI Commands
