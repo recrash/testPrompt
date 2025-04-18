@@ -113,8 +113,3 @@ cd my-vue-app && npm i && npm run dev
 
 # Spring
 ./mvnw clean verify
-
-# Docker
-docker build -t myapp:latest .
-docker compose -f docker-compose.dev.yml up -d
-End of .cursorrules
