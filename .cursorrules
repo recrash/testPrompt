@@ -8,14 +8,17 @@
 - Before implementing, write a detailed **step‑by‑step pseudocode** plan.
 - When using APIs or language features, always consult the **latest official documentation** first.
 - Deliver code that is **up‑to‑date, bug‑free, secure, performant, and fully functional**.
-- Favor readability over raw performance; avoid hard‑coding by extracting constants/configuration.
+- Favor readability over raw performance
+- Avoid hard‑coding by extracting constants/configuration.
 - Implement every requested feature completely—**no TODOs, placeholders, or missing parts**.
-- Perform a final check to prevent runtime errors; include all necessary imports and use clear names.
+- Perform a final check to prevent runtime errors
+- Include all necessary imports and use clear names.
 - Keep prose concise—minimize narrative beyond what is necessary.
 
 --------------------------------------------------------------------
 ## Code Quality
-- Prioritize readability; eliminate duplication (DRY) and honor the Single Responsibility Principle.
+- Prioritize readability.
+- Eliminate duplication (DRY) and honor the Single Responsibility Principle.
 - Extract shared logic into reusable components/services/composables.
 - Replace hard‑coded values with constants or environment variables.
 - Centralize error handling (`@ControllerAdvice` or global handler).
@@ -43,13 +46,15 @@
 
 --------------------------------------------------------------------
 ## Security
-- Validate user input; use PreparedStatements and prevent XSS.
+- Validate user input; 
+- Use PreparedStatements and prevent XSS.
 - Store secrets in environment variables or secret stores.
 - Regularly scan dependencies (`npm audit`, OWASP Dependency‑Check).
 
 --------------------------------------------------------------------
 ## Performance
-- Optimize queries; leverage lazy loading and pagination.
+- Optimize queries; 
+- Leverage lazy loading and pagination.
 - Run heavy tasks asynchronously (@Async / CompletableFuture).
 - Cache with Caffeine or Redis.
 
@@ -78,7 +83,7 @@ src/main/java/com/example/project/
 ├── application/ # Use‑case services 
 ├── domain/ # Domain models & services 
 ├── infrastructure/ # Repositories, external I/O 
-├── config/ # Spring configuration └
+├── config/ # Spring configuration 
 └── util/ # Utilities
 
 
