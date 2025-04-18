@@ -1,0 +1,103 @@
+####################################################################
+# Cursor Rules – Full‑Stack Java (Spring Boot 3 / Java 21) + Vue 3 #
+####################################################################
+
+## General Guidelines
+- **Think in English, but always reply in Korean.**
+- Follow the user’s requirements exactly as stated.
+- Before implementing, write a detailed **step‑by‑step pseudocode** plan.
+- When using APIs or language features, always consult the **latest official documentation** first.
+- Deliver code that is **up‑to‑date, bug‑free, secure, performant, and fully functional**.
+- Favor readability over raw performance; avoid hard‑coding by extracting constants/configuration.
+- Implement every requested feature completely—**no TODOs, placeholders, or missing parts**.
+- Perform a final check to prevent runtime errors; include all necessary imports and use clear names.
+- Keep prose concise—minimize narrative beyond what is necessary.
+
+--------------------------------------------------------------------
+## Code Quality
+- Prioritize readability; eliminate duplication (DRY) and honor the Single Responsibility Principle.
+- Extract shared logic into reusable components/services/composables.
+- Replace hard‑coded values with constants or environment variables.
+- Centralize error handling (`@ControllerAdvice` or global handler).
+- Logging: SLF4J + MDC (trace‑id propagation).
+
+--------------------------------------------------------------------
+## Code Style
+- **Java**: Google Java Style (4‑space indent)  
+- **Vue/JS**: ESLint + Prettier (2‑space indent)  
+- Limit lines to ≤ 80 columns.  
+- Explain **why**, not what, in comments.  
+- Ensure all required imports and clear component names.
+
+--------------------------------------------------------------------
+## Documentation
+- Add JavaDoc/TSDoc to every public API.
+- Maintain `README.md` (setup, run, deploy, FAQ) and `CHANGELOG.md`.
+- Document complex domain logic in `docs/architecture/` (ADR or PlantUML).
+
+--------------------------------------------------------------------
+## Testing
+- Minimum 80 % unit‑test coverage (JUnit 5 / Vitest).
+- Integration tests with Testcontainers (PostgreSQL 16).
+- Optional E2E tests with Playwright or Cypress.
+
+--------------------------------------------------------------------
+## Security
+- Validate user input; use PreparedStatements and prevent XSS.
+- Store secrets in environment variables or secret stores.
+- Regularly scan dependencies (`npm audit`, OWASP Dependency‑Check).
+
+--------------------------------------------------------------------
+## Performance
+- Optimize queries; leverage lazy loading and pagination.
+- Run heavy tasks asynchronously (@Async / CompletableFuture).
+- Cache with Caffeine or Redis.
+
+--------------------------------------------------------------------
+## Database (PostgreSQL 16)
+- Version control via Flyway (`db/migration`).
+- Use `EXPLAIN ANALYZE` and `pg_stat_statements` for diagnostics.
+
+--------------------------------------------------------------------
+## Version Control (Git Workflow)
+- Conventional Commits + Semantic Versioning.
+- Develop features on `feat/*` branches → PR → review → merge to `main`.
+- Keep `main` perpetually deployable.
+
+--------------------------------------------------------------------
+## CI/CD
+- GitHub Actions pipeline: Lint → Test → Build → Docker → Deploy.
+- Image scanning with Trivy.
+
+--------------------------------------------------------------------
+## Project Structure
+
+### Spring Boot 3
+src/main/java/com/example/project/ ├── api/ # REST controllers ├── application/ # Use‑case services ├── domain/ # Domain models & services ├── infrastructure/ # Repositories, external I/O ├── config/ # Spring configuration └── util/ # Utilities
+
+
+### Vue 3 + Vite
+my-vue-app/src/ ├── assets/ # static files ├── components/ # shared UI ├── composables/ # reusable logic ├── views/ # route pages ├── router/ # vue‑router ├── store/ # pinia ├── i18n/ # localization └── main.js
+
+
+--------------------------------------------------------------------
+## Naming Conventions
+- Directories: `kebab-case`; Vue components: `PascalCase.vue`.
+- Pinia store: `useXxxStore.js`; composable: `useSomething.js`.
+- Java packages: `lower.case`; constants: `UPPER_SNAKE_CASE`.
+- CSS (BEM): `block__element--modifier`.
+
+--------------------------------------------------------------------
+## Key CLI Commands
+```bash
+# Vue
+npm create vue@latest my-vue-app -- --default --skip-ts
+cd my-vue-app && npm i && npm run dev
+
+# Spring
+./mvnw clean verify
+
+# Docker
+docker build -t myapp:latest .
+docker compose -f docker-compose.dev.yml up -d
+End of .cursorrules
